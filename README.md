@@ -8,7 +8,7 @@ The Rust book: https://doc.rust-lang.org/stable/book/
 
 # Examples
 
-> Guessing_game.rs
+> ## Guessing_game.rs
 ```
 use std::io;
 use rand::Rng;
