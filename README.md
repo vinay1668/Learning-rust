@@ -8,6 +8,36 @@ The Rust book: https://doc.rust-lang.org/stable/book/
 
 # Examples
 
+> ## Generate the nth Fibonacci number.
+```
+use std::io;
+use colored::*;
+fn main(){
+    println!("{}","Program to generate the nth Fibonacci number!".green());
+    println!("please input the Fibonacci number position");
+    let mut nth_number = String::new();
+    io::stdin().read_line(&mut nth_number).expect("Please input the number.");
+    let nth_number:usize = nth_number.trim().parse().expect("Please input the number");
+    let mut first_number = 0;
+    let mut second_number = 1;
+    let mut xs = Vec::new();
+    xs.push(0);
+    xs.push(1);
+    for element in 3..(nth_number+1){
+        let third_number = first_number + second_number;
+        first_number = second_number;
+        second_number = third_number;
+        xs.push(third_number);
+    }
+    println!("The {} th number in the fibonacci series is: {}", nth_number, xs[nth_number-1]);
+    for element in xs{
+        println!("{}",element);
+    }
+
+}
+```
+<br/>
+
 > ## Convert temperatures between Fahrenheit and Celsius.
 ```
 use std::io;
