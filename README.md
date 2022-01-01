@@ -8,6 +8,40 @@ The Rust book: https://doc.rust-lang.org/stable/book/
 
 # Examples
 
+> ## Convert temperatures between Fahrenheit and Celsius.
+```
+use std::io;
+use colored::*;
+fn main(){
+    println!("{}","program for the conversion of fahrenheit and celsius!".green());
+    println!("Press 1 to convert from fahrenheit to celsius:");
+    println!("Press 2 to convert from celsius to fahrenheit:");
+    let mut number = String::new();
+    io::stdin().read_line(&mut number).expect("please choose the option!");
+    let number:i32 = number.trim().parse().expect("please input the number");
+    if number == 1{
+        println!("Please input the fahrenheit temperature!");
+        let mut fah_num = String::new();
+        io::stdin().read_line(&mut fah_num).expect("please input the fahrenheit");  
+        let fah_num:i32 = fah_num.trim().parse().expect("please input the number");  
+      //(325°F − 32) × 5/9
+        let deg_cel:i32 = (fah_num - 32) * 5/9 ;
+        println!("The degree celsius are :{}",deg_cel);
+    }
+    else if number == 2 {
+        println!("Please input the celsius temperature!");
+        let mut cel_num = String::new();
+        io::stdin().read_line(&mut cel_num).expect("please input the celsius");  
+        let cel_num:i32 = cel_num.trim().parse().expect("please input the number");    
+      //(325°F − 32) × 5/9
+        let deg_fah:i32 = (cel_num * 9/5) + 32;
+        println!("The degree fahrenheit is :{}",deg_fah);     
+    }
+}
+
+```
+<br />
+
 > ## Guessing_game.rs
 ```
 use std::io;
