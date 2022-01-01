@@ -192,7 +192,10 @@ fn main(){
 }
 ```
 <br />
-> ## output of the above program
+
+
+>  ## Output of the above program.
+
 ```
    Compiling guessing_game v0.1.0 (D:\Desktop\rust\projects\guessing_game)
     Finished dev [unoptimized + debuginfo] target(s) in 0.85s
@@ -324,6 +327,7 @@ My good friends brought to me
 (Three boughs of holly)
 (Two candy canes)
 And a song for the Christmas tree
+
 ```
 <br />
 
