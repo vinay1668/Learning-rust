@@ -8,6 +8,326 @@ The Rust book: https://doc.rust-lang.org/stable/book/
 
 # Examples
 
+> ## Print the lyrics to the Christmas carol “The Twelve Days of Christmas,” taking advantage of the repetition in the song.
+
+```
+// Lyrics
+// On the first day of Christmas
+// My good friends brought to me
+// A song and a Christmas tree
+
+// On the second day of Christmas
+// My good friends brought to me
+// (Two candy canes)
+// And a song for the Christmas tree
+
+// On the third day of Christmas
+// My good friends brought to me
+// (Three boughs of holly)
+// (Two candy canes)
+// And a song for the Christmas tree
+
+// On the fourth day of Christmas
+// My good friends brought to me
+// (Four colored lights)
+// (Three boughs of holly)
+// (Two candy canes)
+// And a song for the Christmas tree
+
+// On the fifth day of Christmas
+// My good friends brought to me
+// (A shining star)
+// (Four colored lights)
+// (Three boughs of holly)
+// (Two candy canes)
+
+// And a song for the Christmas tree
+// On the sixth day of Christmas
+// My good friends brought to me
+// (Little silver bells)
+// (A shining star)
+// (Four colored lights)
+// (Three boughs of holly)
+// (Two candy canes)
+// And a song for the Christmas tree
+
+// On the seventh day of Christmas
+// My good friends brought to me
+// (Candles a glowing)
+// (Little silver bells)
+// (A shining star)
+// (Four colored lights)
+// (Three boughs of holly)
+// (Two candy canes)
+// And a song for the Christmas tree
+
+// On the eighth day of Christmas
+// My good friends brought to me
+// (Gold and silver tinsel)
+// (Candles a glowing)
+// (Little silver bells)
+// (A shining star)
+// (Four colored lights)
+// (Three boughs of holly)
+// (Two candy canes)
+// And a song for the Christmas tree
+
+// On the ninth day of Christmas
+// My good friends brought to me
+// (A guardian angel)
+// (Gold and silver tinsel)
+// (Candles a glowing)
+// (Little silver bells)
+// (A shining star)
+// (Four colored lights)
+// (Three boughs of holly)
+// (Two candy canes)
+// And a song for the Christmas tree
+
+// On the tenth day of Christmas
+// My good friends brought to me
+// (Some mistletoe)
+// (A guardian angel)
+// (Gold and silver tinsel)
+// (Candles a glowing)
+// (Little silver bells)
+// (A shining star)
+// (Four colored lights)
+// (Three boughs of holly)
+// (Two candy canes)
+// And a song for the Christmas tree
+
+// On the eleventh day of Christmas
+// My good friends brought to me
+// (Gifts for one and all)
+// (Some mistletoe)
+// (A guardian angel)
+// (Gold and silver tinsel)
+// (Candles a glowing)
+// (Little silver bells)
+// (A shining star)
+// (Four colored lights)
+// (Three boughs of holly)
+// (Two candy canes)
+// And a song for the Christmas tree
+
+// On the twefth day of Christmas
+// My good friends brought to me
+
+// And a song for the Christmas tree
+
+
+use colored::*;
+
+fn main(){
+    println!("{}", "Lyrics to the Christmas carol “The Twelve Days of Christmas,".green());
+    println!("\n");
+    let array_lines = [
+    "(All their good wishes)",
+    "(Gifts for one and all)",
+    "(Some mistletoe)",
+    "(A guardian angel)",
+    "(Gold and silver tinsel)",
+    "(Candles a glowing)",
+    "(Little silver bells)",
+    "(A shining star)",
+    "(Four colored lights)",
+    "(Three boughs of holly)",
+    "(Two candy canes)" 
+    ];
+    let array_initial = [
+        "On the first day of Christmas",
+        "My good friends brought to me",
+         "A song and a Christmas tree" 
+    ];
+    let array_second =[
+        "My good friends brought to me",
+         //(Two candy canes)
+        "And a song for the Christmas tree"
+    ];
+    let array_linear =[
+        "On the second day of Christmas",
+        "On the third day of Christmas",
+        "On the fourth day of Christmas",
+        "On the fifth day of Christmas",
+        "On the sixth day of Christmas",
+        "On the seventh day of Christmas",
+        "On the eighth day of Christmas",
+        "On the nineth day of Christmas",
+        "On the tenth day of Christmas",
+        "On the eleventh day of Christmas",
+        "On the twefth day of Christmas"
+
+
+    ];
+    for i in 0..3{
+        println!("{}",array_initial[i]);
+    }
+    println!("\n");
+    for i in 0..11{
+
+        for j in 0..2{
+            if j == 1 {
+                for k in (1..i+2).rev() {
+                    if k!=0 {
+                    println!("{}",  array_lines[array_lines.len()-k] );
+                    }
+                    
+
+                }
+
+            println!("{}",array_second[j]);
+            }
+            else{
+                if j == 0{
+                    println!("{}",array_linear[i]);
+
+                }
+            println!("{}",array_second[j]);
+            }
+        }
+    println!("\n");   
+    }
+   
+}
+```
+<br />
+> ## output of the above program
+```
+   Compiling guessing_game v0.1.0 (D:\Desktop\rust\projects\guessing_game)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.85s
+     Running `target\debug\guessing_game.exe`
+Lyrics to the Christmas carol “The Twelve Days of Christmas,
+
+
+On the first day of Christmas    
+My good friends brought to me    
+A song and a Christmas tree      
+
+
+On the second day of Christmas   
+My good friends brought to me    
+(Two candy canes)
+And a song for the Christmas tree
+
+
+On the third day of Christmas    
+My good friends brought to me    
+(Three boughs of holly)
+(Two candy canes)
+And a song for the Christmas tree
+
+
+On the fourth day of Christmas
+My good friends brought to me
+(Four colored lights)
+(Three boughs of holly)
+(Two candy canes)
+And a song for the Christmas tree
+
+
+On the fifth day of Christmas
+My good friends brought to me
+(A shining star)
+(Four colored lights)
+(Three boughs of holly)
+(Two candy canes)
+And a song for the Christmas tree
+
+
+On the sixth day of Christmas
+My good friends brought to me
+(Little silver bells)
+(A shining star)
+(Four colored lights)
+(Three boughs of holly)
+(Two candy canes)
+And a song for the Christmas tree
+
+
+On the seventh day of Christmas
+My good friends brought to me
+(Candles a glowing)
+(Little silver bells)
+(A shining star)
+(Four colored lights)
+(Three boughs of holly)
+(Two candy canes)
+And a song for the Christmas tree
+
+
+On the eighth day of Christmas
+My good friends brought to me
+(Gold and silver tinsel)
+(Candles a glowing)
+(Little silver bells)
+(A shining star)
+(Four colored lights)
+(Three boughs of holly)
+(Two candy canes)
+And a song for the Christmas tree
+
+
+On the nineth day of Christmas
+My good friends brought to me
+(A guardian angel)
+(Gold and silver tinsel)
+(Candles a glowing)
+(Little silver bells)
+(A shining star)
+(Four colored lights)
+(Three boughs of holly)
+(Two candy canes)
+And a song for the Christmas tree
+
+
+On the tenth day of Christmas
+My good friends brought to me
+(Some mistletoe)
+(A guardian angel)
+(Gold and silver tinsel)
+(Candles a glowing)
+(Little silver bells)
+(A shining star)
+(Four colored lights)
+(Three boughs of holly)
+(Two candy canes)
+And a song for the Christmas tree
+
+
+On the eleventh day of Christmas
+My good friends brought to me
+(Gifts for one and all)
+(Some mistletoe)
+(A guardian angel)
+(Gold and silver tinsel)
+(Candles a glowing)
+(Little silver bells)
+(A shining star)
+(Four colored lights)
+(Three boughs of holly)
+(Two candy canes)
+And a song for the Christmas tree
+
+
+On the twefth day of Christmas
+My good friends brought to me
+(All their good wishes)
+(Gifts for one and all)
+(Some mistletoe)
+(A guardian angel)
+(Gold and silver tinsel)
+(Candles a glowing)
+(Little silver bells)
+(A shining star)
+(Four colored lights)
+(Three boughs of holly)
+(Two candy canes)
+And a song for the Christmas tree
+```
+<br />
+
+
 > ## Generate the nth Fibonacci number.
 ```
 use std::io;
