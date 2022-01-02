@@ -8,6 +8,21 @@ The Rust book: https://doc.rust-lang.org/stable/book/
 
 # Examples
 
+```
+fn main(){
+    let s1 = "hello".to_string();
+    let s2 = take_ownership(s1);
+    println!("{}",s2);
+}
+
+fn take_ownership(s:String) -> String {
+    let mut s3:String = String::from("world");
+    s
+}
+
+
+```
+
 <br />
 
 > ## But if we want to really copy the heap data, we can use the clone() method
