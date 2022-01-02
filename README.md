@@ -8,6 +8,45 @@ The Rust book: https://doc.rust-lang.org/stable/book/
 
 # Examples
 
+<br />
+
+> ## But if we want to really copy the heap data, we can use the clone() method
+
+```
+fn main(){
+    let s2:String = String::from("hello");
+    let s1= s2.clone();
+    println!("{}",s1);
+    println!("{}",s2);
+    
+}
+```
+
+> ## You will get error because Rust prevents you from using the invalidated reference
+
+```
+fn main(){
+  let mut s1:String = String::from("Alan Turing");
+  let mut s2 = s1;
+  println!("{}",s1);
+
+}
+```
+
+<br />
+
+> ## This is valid cause integer uses stack for memory allocation.
+
+```
+fn main(){
+    let x = 3;
+    let y = x;
+    println!("{}",x);
+}
+
+```
+
+
 > ## Print the lyrics to the Christmas carol “The Twelve Days of Christmas,” taking advantage of the repetition in the song.
 
 ```
