@@ -8,6 +8,23 @@ The Rust book: https://doc.rust-lang.org/stable/book/
 
 # Examples
 
+> ## Passing reference as a parameter without taking ownership.
+
+```
+fn main(){
+    let mut name:String = String::from("Heisenberg");
+    let mut len = calculate_len(&name);
+    println!("The length of the name {} is : {}", name,len);
+}
+
+fn calculate_len(nam:&String) -> usize{
+    let mut length = nam.len();
+    length
+
+}
+```
+<br />
+
 ```
 fn main(){
     let s1 = "hello".to_string();
